@@ -1,15 +1,127 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="uk">
     <meta charset="UTF-8">
-    <title>My Page</title>
-
-
+    <title>Buy list</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
+
 <body>
-<h1>Hello World</h1>
-<p>Hello Git</p>
-<div class="text2018">Hi 2018!!!</div>
+    <div class="container">
+        <div class="left box">
+            <div class="row">
+                <div class="form">
+                    <input placeholder="Назва товару"></input>
+                    <button>
+                        Додати
+                    </button>
+                </div>
+            </div>
+            <div class="row item">
+                <div class="row-left">
+                    Помідори
+                </div>
+                <div class="row-center">
+                    <button class="red circle">
+                        -
+                    </button>
+                    <span class="count">
+                        1
+                    </span>
+                    <button class="green circle">
+                        +
+                    </button>
+                </div>
+                <div class="row-right">
+                    <button class="bought-button">
+                        Куплено
+                    </button>
+                    <button class="red remove-button">
+                        x
+                    </button>
+                </div>
+            </div>
+            <div class="row item">
+                <div class="row-left">
+                    Печиво
+                </div>
+                <div class="row-center">
+                    <button class="red circle">
+                        -
+                    </button>
+                    <span class="count">
+                        1
+                    </span>
+                    <button class="green circle">
+                        +
+                    </button>
+                </div>
+                <div class="row-right">
+                    <button class="bought-button">
+                        Куплено
+                    </button>
+                    <button class="red remove-button">
+                        x
+                    </button>
+                </div>
+            </div>
+            <div class="row item">
+                <div class="row-left">
+                    Сир
+                </div>
+                <div class="row-center">
+                    <button class="red circle">
+                        -
+                    </button>
+                    <span class="count">
+                        1
+                    </span>
+                    <button class="green circle">
+                        +
+                    </button>
+                </div>
+                <div class="row-right">
+                    <button class="bought-button">
+                        Куплено
+                    </button>
+                    <button class="red remove-button">
+                        x
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="right box">
+            <div class="row">
+                <h3>Залишилося</h3>
+            </div>
+            <div class="row">
+                <span class="mini-item">
+                    Помідори
+                    <span class="orange-circle">
+                        1
+                    </span>
+                </span>
+                <span class="mini-item">
+                    Печиво
+                    <span class="orange-circle">
+                        1
+                    </span>
+                </span>
+                <span class="mini-item">
+                    Сир
+                    <span class="orange-circle">
+                        1
+                    </span>
+                </span>
+            </div>
+            <div class="row">
+                <h3>Куплено</h3>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
