@@ -196,10 +196,23 @@ button {
 .badge {
     position: fixed;
     bottom: 0;
-    left: 5rem;
+    left: 5em;
     color: white;
     background-color: darkviolet;
-    padding: 1rem;
+    padding: 1em;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    height: 1em;
+    width: 4em;
+    text-align: center;
+    transition: background-color 1s ease-out,
+                height 1s ease-out,
+                width 1s ease-out;
+}
+
+.badge:hover {
+    background-color: darkblue;
+    cursor: pointer;
+    height: 5em;
+    width: 8em;
 }
