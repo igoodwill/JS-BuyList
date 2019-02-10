@@ -6,6 +6,8 @@
     <title>Buy list</title>
     <link rel="stylesheet" type="text/css" href="main.css" media="all" />
     <link rel="stylesheet" type="text/css" href="print.css" media="print" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="main.js"></script>
 </head>
 
 <body>
@@ -13,82 +15,38 @@
         <div class="left box">
             <div class="row">
                 <div class="form">
-                    <input placeholder="Назва товару"></input>
-                    <button data-tooltip="Add">
+                    <input id="item-name" placeholder="Назва товару"></input>
+                    <button id="add-item" data-tooltip="Add">
                         Додати
                     </button>
                 </div>
             </div>
-            <div class="row item">
-                <div class="row-left">
-                    Помідори
-                </div>
-                <div class="row-center">
-                    <button class="red circle" data-tooltip="Decrease">
-                        -
-                    </button>
-                    <span class="count">
-                        1
-                    </span>
-                    <button class="green circle" data-tooltip="Increase">
-                        +
-                    </button>
-                </div>
-                <div class="row-right">
-                    <button class="bought-button" data-tooltip="Buy">
-                        Куплено
-                    </button>
-                    <button class="red remove-button" data-tooltip="Remove">
-                        x
-                    </button>
-                </div>
-            </div>
-            <div class="row item">
-                <div class="row-left">
-                    Печиво
-                </div>
-                <div class="row-center">
-                    <button class="red circle" data-tooltip="Decrease">
-                        -
-                    </button>
-                    <span class="count">
-                        1
-                    </span>
-                    <button class="green circle" data-tooltip="Increase">
-                        +
-                    </button>
-                </div>
-                <div class="row-right">
-                    <button class="bought-button" data-tooltip="Buy">
-                        Куплено
-                    </button>
-                    <button class="red remove-button" data-tooltip="Remove">
-                        x
-                    </button>
-                </div>
-            </div>
-            <div class="row item">
-                <div class="row-left">
-                    Сир
-                </div>
-                <div class="row-center">
-                    <button class="red circle" data-tooltip="Decrease">
-                        -
-                    </button>
-                    <span class="count">
-                        1
-                    </span>
-                    <button class="green circle" data-tooltip="Increase">
-                        +
-                    </button>
-                </div>
-                <div class="row-right">
-                    <button class="bought-button" data-tooltip="Buy">
-                        Куплено
-                    </button>
-                    <button class="red remove-button" data-tooltip="Remove">
-                        x
-                    </button>
+            <div id="items">
+                <div id="item" hidden>
+                    <div class="row item">
+                        <div class="row-left">
+                            <span id="title"></span>
+                        </div>
+                        <div class="row-center">
+                            <button class="red circle" data-tooltip="Decrease">
+                                -
+                            </button>
+                            <span class="count">
+                                1
+                            </span>
+                            <button class="green circle" data-tooltip="Increase">
+                                +
+                            </button>
+                        </div>
+                        <div class="row-right">
+                            <button class="bought-button" data-tooltip="Buy">
+                                Куплено
+                            </button>
+                            <button class="red remove-button" data-tooltip="Remove">
+                                x
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
