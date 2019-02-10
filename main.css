@@ -77,7 +77,6 @@ h3 {
 
 .form {
     display: flex;
-    width: 100%;
 }
 
 input {
@@ -126,21 +125,27 @@ button {
     font-weight: 700;
 }
 
+.row-left, .row-center, .row-right {
+    position: absolute;
+}
+
 .row-left {
-    width: 40%;
+    left: 2%;
+    top: 30%;
 }
 
 .row-center {
-    width: 40%;
+    left: 40%;
 }
 
 .row-right {
-    width: 20%;
+    right: 2%;
 }
 
 .item {
-    display: flex;
     padding: 0.5em 0 0.5em 1em;
+    position: relative;
+    height: 2.1em;
 }
 
 .circle {
@@ -211,4 +216,15 @@ button {
     cursor: pointer;
     height: 5em;
     width: 8em;
+}
+
+@media (max-width: 500px) {
+    .left, .right {
+        float: none !important;
+        width: 450px;
+    }
+
+    .right {
+        margin-top: 1rem;
+    }
 }
