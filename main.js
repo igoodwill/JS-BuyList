@@ -9,12 +9,39 @@ $(function () {
     function addItem(name) {
         var item = $(ITEM_TEMPLATE);
 
-        item.show();
-        item.find("#title").text(name);
-        item.find(".remove-button").click(function () {
+        var title = item.find("#title");
+        var crossedTitle = item.find("#crossed-title");
+        var removeButton = item.find(".remove-button");
+        var buyButton = item.find(".buy-button");
+        var boughtButton = item.find(".bought-button");
+        var decreaseButton = item.find("#decrease");
+        var increaseButton = item.find("#increase");
+
+        title.text(name);
+        crossedTitle.text(name);
+        removeButton.click(function () {
             item.remove();
         });
+        buyButton.click(function () {
+            buyButton.hide();
+            boughtButton.show();
+            removeButton.hide();
+            decreaseButton.hide();
+            increaseButton.hide();
+            title.hide();
+            crossedTitle.show();
+        });
+        boughtButton.click(function () {
+            boughtButton.hide();
+            buyButton.show();
+            removeButton.show();
+            decreaseButton.show();
+            increaseButton.show();
+            title.show();
+            crossedTitle.hide();
+        });
 
+        item.show();
         ITEMS.append(item);
     }
 

@@ -26,21 +26,25 @@
                     <div class="row item">
                         <div class="row-left">
                             <span id="title"></span>
+                            <span id="crossed-title" hidden></span>
                         </div>
                         <div class="row-center">
-                            <button class="red circle" data-tooltip="Decrease">
+                            <button id="decrease" class="red circle" data-tooltip="Decrease">
                                 -
                             </button>
                             <span class="count">
                                 1
                             </span>
-                            <button class="green circle" data-tooltip="Increase">
+                            <button id="increase" class="green circle" data-tooltip="Increase">
                                 +
                             </button>
                         </div>
                         <div class="row-right">
-                            <button class="bought-button" data-tooltip="Buy">
+                            <button class="buy-button" data-tooltip="Buy">
                                 Куплено
+                            </button>
+                            <button class="bought-button" data-tooltip="Do not buy" hidden>
+                                Не куплено
                             </button>
                             <button class="red remove-button" data-tooltip="Remove">
                                 x
