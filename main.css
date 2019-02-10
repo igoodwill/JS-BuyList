@@ -127,6 +127,11 @@ button {
     position: relative;
 }
 
+button:disabled {
+    cursor: unset;
+    opacity: 0.5;
+}
+
 button::before {
     position: absolute;
     content: attr(data-tooltip);

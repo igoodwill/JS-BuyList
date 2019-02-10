@@ -20,6 +20,7 @@ $(function () {
         var boughtButton = item.find(".bought-button");
         var decreaseButton = item.find("#decrease");
         var increaseButton = item.find("#increase");
+        var count = item.find(".count");
 
         title.text(name);
         removeButton.click(function () {
@@ -51,6 +52,22 @@ $(function () {
             editTitle.focus();
         });
 
+        var getCount = function () {
+            return parseInt(count.text());
+        };
+
+        decreaseButton.click(function () {
+            var newCount = getCount() - 1;
+            if (newCount == 1) {
+                decreaseButton.attr("disabled", "disabled");
+            }
+            count.text(newCount);
+        });
+        increaseButton.click(function () {
+            count.text(getCount() + 1);
+            decreaseButton.removeAttr("disabled");
+        });
+
         var onNameEdit = function () {
             var newName = editTitle.val();
             if (newName != "") {
@@ -59,7 +76,7 @@ $(function () {
 
             title.show();
             editTitle.hide();
-        }
+        };
 
         editTitle.keyup(function (event) {
             if (event.keyCode == ENTER_CODE || event.keyCode == ESC_CODE) {
