@@ -80,7 +80,7 @@ h3 {
     display: flex;
 }
 
-input {
+.form > input {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
     border-right-color: transparent !important;
@@ -245,6 +245,10 @@ button:hover::before {
 
 #crossed-title {
     text-decoration: line-through;
+}
+
+#edit-title {
+
 }
 
 @media (max-width: 500px) {

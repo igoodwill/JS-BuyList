@@ -1,3 +1,6 @@
+const ENTER_CODE = 13;
+const ESC_CODE = 27;
+
 $(function () {
     const ITEM = $("#item");
     const ITEM_TEMPLATE = ITEM.html();
@@ -11,6 +14,7 @@ $(function () {
 
         var title = item.find("#title");
         var crossedTitle = item.find("#crossed-title");
+        var editTitle = item.find("#edit-title");
         var removeButton = item.find(".remove-button");
         var buyButton = item.find(".buy-button");
         var boughtButton = item.find(".bought-button");
@@ -18,7 +22,6 @@ $(function () {
         var increaseButton = item.find("#increase");
 
         title.text(name);
-        crossedTitle.text(name);
         removeButton.click(function () {
             item.remove();
         });
@@ -29,6 +32,7 @@ $(function () {
             decreaseButton.hide();
             increaseButton.hide();
             title.hide();
+            crossedTitle.text(title.text());
             crossedTitle.show();
         });
         boughtButton.click(function () {
@@ -40,6 +44,31 @@ $(function () {
             title.show();
             crossedTitle.hide();
         });
+        title.click(function () {
+            title.hide();
+            editTitle.val(title.text());
+            editTitle.show();
+            editTitle.focus();
+        });
+
+        var onNameEdit = function () {
+            var newName = editTitle.val();
+            if (newName != "") {
+                title.text(newName);
+            }
+
+            title.show();
+            editTitle.hide();
+        }
+
+        editTitle.keyup(function (event) {
+            if (event.keyCode == ENTER_CODE || event.keyCode == ESC_CODE) {
+                onNameEdit();
+            }
+        });
+        editTitle.focusout(function () {
+            onNameEdit();
+        });
 
         item.show();
         ITEMS.append(item);
@@ -50,7 +79,7 @@ $(function () {
     addItem("Сир");
 
     ITEM_NAME.keyup(function (event) {
-        if (event.keyCode == 13) {
+        if (event.keyCode == ENTER_CODE) {
             onAdd();
         }
     });
