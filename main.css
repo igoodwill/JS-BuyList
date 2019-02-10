@@ -42,6 +42,7 @@ h3 {
     border-top: 1px solid rgba(34,36,38,.15);
     background: #FFF;
     padding: 1em;
+    position: relative;
 }
 
 .box > .row:first-child {
@@ -123,6 +124,20 @@ button {
     text-align: center;
     font-size: 1rem;
     font-weight: 700;
+    position: relative;
+}
+
+button:hover::before {
+    position: absolute;
+    content: attr(data-tooltip);
+    background: darkviolet;
+    color: white;
+    border-radius: 10px;
+    padding: 1em 3em;
+    z-index: 1;
+    pointer-events: none;
+    top:-30px;
+    left: 25px;
 }
 
 .row-left, .row-center, .row-right {
@@ -144,7 +159,6 @@ button {
 
 .item {
     padding: 0.5em 0 0.5em 1em;
-    position: relative;
     height: 2.1em;
 }
 
