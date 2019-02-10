@@ -8,8 +8,13 @@ $(function () {
 
     function addItem(name) {
         var item = $(ITEM_TEMPLATE);
+
         item.show();
         item.find("#title").text(name);
+        item.find(".remove-button").click(function () {
+            item.remove();
+        });
+
         ITEMS.append(item);
     }
 
@@ -17,7 +22,7 @@ $(function () {
     addItem("Печиво");
     addItem("Сир");
 
-    ITEM_NAME.keyup(function(event) {
+    ITEM_NAME.keyup(function (event) {
         if (event.keyCode == 13) {
             onAdd();
         }
