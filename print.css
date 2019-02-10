@@ -1,0 +1,10 @@
+.badge {
+    border: solid darkviolet;
+    height: 3em;
+    width: 8em;
+    color: black;
+}
+
+.badge > .title {
+    display: none;
+}
